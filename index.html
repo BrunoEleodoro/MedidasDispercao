@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    </head>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medidadas de Disperção</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <body>
-    <center>
-        <form action="gerar.php" method="GET">
-            Linhas:<input type="text" name="linhas">
-            <br>
-             Colunas:<input type="text" name="colunas">
-             <br>
-             <button type="submit">ENVIAR</button>
-        </form>
-    </center>
+  <nav>
+    <ul>
+      <li title="Inserir dados"><a href="#insercaoDados"><i class="fa fa-pencil-square-o"></i></a></li>
+      <li title="Sobre o grupo"><a href="#sobreGrupo"><i class="fa fa-users" aria-hidden="true"></i></a></li>
+    </ul>
+  </nav>
+
+  <section id="insercaoDados">
+    <form method="post" action="gerar.php">
+      <label for="tipoInsercao">Escolha a forma de inserção de dados</label><br>
+      <select id="tipoInsercao" onchange="gerarCampo(this)">
+          <<option value="" selected></option>
+          <option value="1">Dados em Rol</option>
+          <option value="2">Dados em Tabela</option>
+          <option value="3">Dados em Tabela com Intervalo de classes</option>
+      </select>
+    </form>
+  </section>
+  <script src="script.js"></script>
 </body>
 </html>
